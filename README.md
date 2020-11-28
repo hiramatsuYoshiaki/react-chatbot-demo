@@ -74,15 +74,46 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-`firebase.json`
-削除
+### deploy error eslint
+
+1. firebase.json に"root": true を追加
+   `firebase.json`
 
 ```
-"functions": {
-    "predeploy": [
-      "npm --prefix \"$RESOURCE_DIR\" run lint",
-      "npm --prefix \"$RESOURCE_DIR\" run build"
+"eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ],
-    "source": "functions"
+    "root": true
   },
 ```
+
+2. eslintrc.js に"root": true を追加
+   `eslintrs.js`
+
+```
+module.exports = {
+  root: true,
+}
+
+```
+
+### cloud function api を叩く
+
+Execute the following command in your Terminal app
+cURL
+
+```
+ curl -X POST https://YOUR_REGION-YOUR_PROJECT_NAME.cloudfunctions.net/ addDataset -H "Content-Type:application/ " -d @dataset.json
+```
+
+PowerShell
+
+```
+Invoke-WebRequest -Method Post -ContentType application/json -InFile dataset.json https://YOUR_REGION-YOUR_PROJECT_NAME.cloudfunctions.net/addDataset
+```
+
+### curl/PowerShell で HTTP アクセスいろいろ
+
+https://qiita.com/zaki-lknr/items/8950f6acea20961a8afc
