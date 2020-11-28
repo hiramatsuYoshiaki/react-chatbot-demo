@@ -47,8 +47,9 @@ export default class FormDialog extends React.Component {
         description +
         "\n",
     };
-    const url =
-      "https://hooks.slack.com/services/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";
+    const url = process.env.REACT_APP_SLACK_WEBHOOK;
+    console.log("submitForm---------");
+    console.log(url);
     fetch(url, {
       method: "post",
       body: JSON.stringify(payload),
