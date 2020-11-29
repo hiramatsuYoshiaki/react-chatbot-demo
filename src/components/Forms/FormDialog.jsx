@@ -48,8 +48,6 @@ export default class FormDialog extends React.Component {
         "\n",
     };
     const url = process.env.REACT_APP_SLACK_WEBHOOK;
-    console.log("submitForm---------");
-    console.log(url);
     fetch(url, {
       method: "post",
       body: JSON.stringify(payload),

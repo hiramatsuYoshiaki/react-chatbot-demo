@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBnZAuN2X3WdTrXDOfZKjPJwLH2OCS5qUE",
-  authDomain: "chatbot-5b7ae.firebaseapp.com",
-  databaseURL: "https://chatbot-5b7ae.firebaseio.com",
-  projectId: "chatbot-5b7ae",
-  storageBucket: "chatbot-5b7ae.appspot.com",
-  messagingSenderId: "891138945845",
-  appId: "1:891138945845:web:b2fc24c7765b26a4a3527c",
-  measurementId: "G-QN0LR6R8VK",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMEIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STRAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 export default firebaseConfig;
